@@ -2,7 +2,7 @@
 
 namespace PHPMD\Cache;
 
-class ResultCacheEngine
+final class ResultCacheEngine
 {
     public function __construct(
         private ResultCacheFileFilter $fileFilter,

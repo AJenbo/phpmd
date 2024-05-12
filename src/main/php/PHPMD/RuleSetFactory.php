@@ -28,7 +28,7 @@ use SimpleXMLElement;
  * This factory class is used to create the {@link \PHPMD\RuleSet} instance
  * that PHPMD will use to analyze the source code.
  */
-class RuleSetFactory
+final class RuleSetFactory
 {
     /**
      * Is the strict mode active?

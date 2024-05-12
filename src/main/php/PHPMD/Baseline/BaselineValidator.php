@@ -4,7 +4,7 @@ namespace PHPMD\Baseline;
 
 use PHPMD\RuleViolation;
 
-class BaselineValidator
+final class BaselineValidator
 {
     public function __construct(
         private BaselineSet $baselineSet,

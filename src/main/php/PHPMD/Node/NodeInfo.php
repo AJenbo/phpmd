@@ -2,7 +2,7 @@
 
 namespace PHPMD\Node;
 
-class NodeInfo
+final class NodeInfo
 {
     /**
      * @param ?string $fileName The full filepath of this violation.
