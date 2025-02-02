@@ -54,6 +54,30 @@ class StaticAccessTest extends AbstractTestCase
         $rule->apply($this->getMethod());
     }
 
+    public function testRuleNotAppliesToStaticMethodAccessWhenExcludedViaWildCard1(): void
+    {
+        $rule = new StaticAccess();
+        $rule->setReport($this->getReportWithNoViolation());
+        $rule->addProperty('exceptions', 'Illuminate\Support\*');
+        $rule->apply($this->getMethod());
+    }
+
+    public function testRuleNotAppliesToStaticMethodAccessWhenExcludedViaWildCard2(): void
+    {
+        $rule = new StaticAccess();
+        $rule->setReport($this->getReportWithNoViolation());
+        $rule->addProperty('exceptions', '*\Support\*');
+        $rule->apply($this->getMethod());
+    }
+
+    public function testRuleNotAppliesToStaticMethodAccessWhenExcludedViaWildCard3(): void
+    {
+        $rule = new StaticAccess();
+        $rule->setReport($this->getReportWithNoViolation());
+        $rule->addProperty('exceptions', 'Illuminate\*');
+        $rule->apply($this->getMethod());
+    }
+
     public function testRuleAppliesToStaticMethodAccess(): void
     {
         $rule = new StaticAccess();
